@@ -45,15 +45,44 @@ const MainDiv = styled.div`
       font-size: 60px;
       font-weight: 400;
       letter-spacing: 35px;
+      /* Animations */
+      animation-name: moveInLeft;
+      animation-duration: 1s;
     }
     .heading-primary-sub {
       display: block;
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 17.4px;
+      /* Animations */
+      animation-name: moveInRight;
+      animation-duration: 1s;
     }
     .logo {
       height: 35px;
+    }
+    @keyframes moveInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      80% {
+        transform: translateX(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+    @keyframes moveInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
     }
   }
 `;
