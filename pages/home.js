@@ -39,6 +39,8 @@ const MainDiv = styled.div`
       z-index: 5;
       color: #fff;
       text-transform: uppercase;
+      /* Animation shakiness fix */
+      backface-visibility: hidden;
     }
     .heading-primary-main {
       display: block;
@@ -48,6 +50,7 @@ const MainDiv = styled.div`
       /* Animations */
       animation-name: moveInLeft;
       animation-duration: 1s;
+      animation-timing-function: ease-out;
     }
     .heading-primary-sub {
       display: block;
@@ -55,8 +58,7 @@ const MainDiv = styled.div`
       font-weight: 700;
       letter-spacing: 17.4px;
       /* Animations */
-      animation-name: moveInRight;
-      animation-duration: 1s;
+      animation: moveInRight 1s ease-out;
     }
     .logo {
       height: 35px;
@@ -78,6 +80,9 @@ const MainDiv = styled.div`
       0% {
         opacity: 0;
         transform: translateX(100px);
+      }
+      80% {
+        transform: translateX(-10px);
       }
       100% {
         opacity: 1;
