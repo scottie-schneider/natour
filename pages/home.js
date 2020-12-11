@@ -74,6 +74,7 @@ const MainDiv = styled.div`
 			padding: 15px 40px;
 			border-radius: 100px;
 			transition: all 0.2s;
+			position: relative;
 		}
 		.btn:hover {
 			transform: translateY(-3px);
@@ -86,6 +87,29 @@ const MainDiv = styled.div`
 		.btn-white {
 			background-color: #fff;
 			color: #777;
+		}
+		.btn::after {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			border-radius: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			transition: all 0.4s;
+		}
+		.btn-white::after {
+			background-color: #fff;
+		}
+		.btn:hover::after {
+			transform: scaleX(1.4) scaleY(1.6);
+			opacity: 0;
+		}
+		.btn-animated {
+			animation: moveInBottom 0.5s ease-out 0.75s;
+			animation-fill-mode: backwards;
 		}
 		@keyframes moveInLeft {
 			0% {
@@ -107,6 +131,16 @@ const MainDiv = styled.div`
 			}
 			80% {
 				transform: translateX(-10px);
+			}
+			100% {
+				opacity: 1;
+				transform: translate(0);
+			}
+		}
+		@keyframes moveInBottom {
+			0% {
+				opacity: 0;
+				transform: translateY(30px);
 			}
 			100% {
 				opacity: 1;
@@ -154,7 +188,7 @@ export default function Home() {
 							<span className="heading-primary-main">Outdoors </span>
 							<span className="heading-primary-sub">is where life happens</span>
 						</h1>
-						<a href="#" className="btn btn-white">
+						<a href="#" className="btn btn-white btn-animated">
 							Discover our tours
 						</a>
 					</div>
