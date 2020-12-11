@@ -24,17 +24,20 @@ const MainDiv = styled.div`
 		}
 		.other {
 		}
-		.logo-box {
+		.header__logo-box {
 			position: absolute;
 			top: 40px;
 			left: 40px;
 		}
-		.text-box {
+		.header__text-box {
 			position: absolute;
 			top: 40%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
+		}
+		.header__logo {
+			height: 35px;
 		}
 		.heading-primary {
 			z-index: 5;
@@ -62,9 +65,7 @@ const MainDiv = styled.div`
 			/* Animations */
 			animation: moveInRight 1s ease-out;
 		}
-		.logo {
-			height: 35px;
-		}
+
 		/* Buttons */
 		.btn:link,
 		.btn:visited {
@@ -180,10 +181,10 @@ export default function Home() {
 			<header className="header">
 				<div className="overlay"></div>
 				<div className="other">
-					<div className="logo-box">
-						<img src="/img/logo-white.png" alt="Natours logo" className="logo" />
+					<div className="header__logo-box">
+						<img src="/img/logo-white.png" alt="Natours logo" className="header__logo" />
 					</div>
-					<div className="text-box">
+					<div className="header__text-box">
 						<h1 className="heading-primary">
 							<span className="heading-primary-main">Outdoors </span>
 							<span className="heading-primary-sub">is where life happens</span>
