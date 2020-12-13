@@ -1,5 +1,6 @@
-import UserProvider from "../context/userContext";
-import { createGlobalStyle } from "styled-components";
+import UserProvider from '../context/userContext';
+import { createGlobalStyle } from 'styled-components';
+import '../styles/styles.css';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -19,19 +20,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 // Custom App to wrap it with context provider
 export default function App({ Component, pageProps }) {
-  return (
-    <UserProvider>
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-          rel="stylesheet"
-        />
-      </head>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </UserProvider>
-  );
+	return (
+		<UserProvider>
+			<head>
+				<meta charset="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link
+					href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+					rel="stylesheet"
+				/>
+			</head>
+			<GlobalStyle />
+			<Component {...pageProps} />
+		</UserProvider>
+	);
 }

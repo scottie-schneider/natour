@@ -36,6 +36,66 @@ const StyledMain = styled.main`
 	/* Animations */
 
 	/* Base */
+
+	/* Base - Feature Boxes */
+
+	.section-features {
+		.overlay {
+			height: 100%;
+			width: 100%;
+			background-image: linear-gradient(
+				to right bottom,
+				${props => props.theme.primary_light},
+				${props => props.theme.primary_dark}
+			);
+			opacity: 80%;
+			position: absolute;
+			z-index: -10;
+		}
+		z-index: 100;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		padding: 5rem;
+		grid-gap: 6rem;
+		transition: all 0.3s;
+		transform: skewY(-7deg);
+		height: 95vh;
+		background-size: cover;
+		background-image: url('/img/hero.jpg');
+		clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+		position: relative;
+		& > *:not(.overlay) {
+			transform: skewY(7deg);
+		}
+		.feature-box {
+			.heading-tertiary {
+				font-size: 1.2rem;
+			}
+			transition: all 0.2s;
+			background-color: rgba(255, 255, 255, 0.8);
+			font-size: 1.2rem;
+			padding: 2.5rem;
+			text-align: center;
+			border-radius: 3px;
+			box-shadow: 0 1.5rem 4rem rgba(0, 0, 0.15);
+			z-index: 100;
+			&__icon {
+				font-size: 6rem;
+				margin-bottom: 0.5rem;
+				background-image: linear-gradient(
+					to right,
+					${props => props.theme.primary_light},
+					${props => props.theme.primary_dark}
+				);
+				display: inline-block;
+				-webkit-background-clip: text;
+				color: transparent;
+			}
+			&:hover {
+				transform: translateY(-1.5rem) scale(1.03);
+			}
+		}
+	}
 	.images {
 		.composition {
 			&:hover .composition__photo:not(:hover) {
@@ -74,6 +134,7 @@ const StyledMain = styled.main`
 	.tour-marketing {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		margin-bottom: 8rem;
 	}
 	.btn-text {
 		&:link,
@@ -203,25 +264,25 @@ export default function Home() {
 				</div>
 			</StyledHeader>
 			<StyledMain theme={theme}>
-				<section class="section-about">
-					<div class="u-center-text u-margin-bottom-big">
-						<h2 class="heading-secondary">Exciting tours for adventurous people</h2>
+				<section className="section-about">
+					<div className="u-center-text u-margin-bottom-big">
+						<h2 className="heading-secondary">Exciting tours for adventurous people</h2>
 					</div>
-					<div class="tour-marketing">
-						<div class="text">
-							<h3 class="heading-tertiary u-margin-bottom-small">
+					<div className="tour-marketing">
+						<div className="text">
+							<h3 className="heading-tertiary u-margin-bottom-small">
 								You're going to fall in love with nature
 							</h3>
-							<p class="paragraph">
+							<p className="paragraph">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
 								similique repellat inventore voluptatum maxime, non accusantium, ea reiciendis
 								atque tempora beatae perspiciatis, temporibus ipsam repudiandae blanditiis
 								ipsa error qui illum?
 							</p>
-							<h3 class="heading-tertiary u-margin-bottom-small">
+							<h3 className="heading-tertiary u-margin-bottom-small">
 								Live adventurous as you never have before
 							</h3>
-							<p class="paragraph">
+							<p className="paragraph">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nulla quasi
 								cum sunt totam iusto dolore veritatis officia quos repellendus quia excepturi,
 								in porro adipisci aperiam, commodi quidem iste perferendis.
@@ -230,26 +291,65 @@ export default function Home() {
 								Learn more {String.fromCharCode(8594)}
 							</a>
 						</div>
-						<div class="images">
-							<div class="composition">
+						<div className="images">
+							<div className="composition">
 								<img
 									src="img/nat-1-large.jpg"
 									alt="Photo 1"
-									class="composition__photo composition__photo--p1"
+									className="composition__photo composition__photo--p1"
 								/>
 								<img
 									src="img/nat-2-large.jpg"
 									alt="Photo 2"
-									class="composition__photo composition__photo--p2"
+									className="composition__photo composition__photo--p2"
 								/>
 								<img
 									src="img/nat-3-large.jpg"
 									alt="Photo 3"
-									class="composition__photo composition__photo--p3"
+									className="composition__photo composition__photo--p3"
 								/>
 							</div>
 						</div>
 					</div>
+					<section className="section-features">
+						<div className="overlay"></div>
+						<div class="col-1-of-4">
+							<div class="feature-box">
+								<i className="feature-box__icon icon-basic-world"></i>
+								<h3 className="heading-tertiary">Explore</h3>
+								<p className="feature-box__text">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								</p>
+							</div>
+						</div>
+						<div class="col-1-of-4">
+							<div class="feature-box">
+								<i className="feature-box__icon icon-basic-world"></i>
+								<h3 className="heading-tertiary">Meet nature</h3>
+								<p className="feature-box__text">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								</p>
+							</div>
+						</div>
+						<div class="col-1-of-4">
+							<div class="feature-box">
+								<i className="feature-box__icon icon-basic-world"></i>
+								<h3 className="heading-tertiary">Find your way</h3>
+								<p className="feature-box__text">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								</p>
+							</div>
+						</div>
+						<div class="col-1-of-4">
+							<div class="feature-box">
+								<i className="feature-box__icon icon-basic-world"></i>
+								<h3 className="heading-tertiary">Live healthier</h3>
+								<p className="feature-box__text">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								</p>
+							</div>
+						</div>
+					</section>
 				</section>
 			</StyledMain>
 		</MainDiv>

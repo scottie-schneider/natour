@@ -56,7 +56,7 @@ const StyledHeader = styled.header`
 		/* Animations */
 		animation: moveInRight 1s ease-out;
 	}
-	.logo {
+	.header__logo {
 		height: 35px;
 	}
 	/* Buttons */
