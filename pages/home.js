@@ -39,7 +39,7 @@ const StyledMain = styled.main`
 	.images {
 		.composition {
 			&:hover .composition__photo:not(:hover) {
-				transform: scale(0.9);
+				transform: scale(0.9) translateY(-5rem);
 			}
 			position: relative;
 			&__photo {
