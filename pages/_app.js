@@ -9,13 +9,19 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box; 
     text-decoration: none; 
   }
+  html, body {margin: 0; height: 100%; overflow: hidden}
   body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-size: 16px; 
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 0px;
+  }
+  #__next {
+    height: 100%;
+    min-height: 100%;
+    
   }
 `;
 // Custom App to wrap it with context provider

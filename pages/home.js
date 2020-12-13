@@ -37,8 +37,6 @@ const StyledMain = styled.main`
 
 	/* Base */
 
-	/* Base - Feature Boxes */
-
 	.section-features {
 		.overlay {
 			height: 100%;
@@ -212,6 +210,7 @@ const StyledMain = styled.main`
 	.u-margin-bottom-small {
 		margin-bottom: 2rem;
 	}
+	/* Tours Section */
 `;
 const MainDiv = styled.div`
 	/* Basic reset */
@@ -324,7 +323,7 @@ export default function Home() {
 						</div>
 						<div class="col-1-of-4">
 							<div class="feature-box">
-								<i className="feature-box__icon icon-basic-world"></i>
+								<i className="feature-box__icon icon-basic-compass"></i>
 								<h3 className="heading-tertiary">Meet nature</h3>
 								<p className="feature-box__text">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -333,7 +332,7 @@ export default function Home() {
 						</div>
 						<div class="col-1-of-4">
 							<div class="feature-box">
-								<i className="feature-box__icon icon-basic-world"></i>
+								<i className="feature-box__icon icon-basic-map"></i>
 								<h3 className="heading-tertiary">Find your way</h3>
 								<p className="feature-box__text">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -342,13 +341,17 @@ export default function Home() {
 						</div>
 						<div class="col-1-of-4">
 							<div class="feature-box">
-								<i className="feature-box__icon icon-basic-world"></i>
+								<i className="feature-box__icon icon-basic-heart"></i>
 								<h3 className="heading-tertiary">Live healthier</h3>
 								<p className="feature-box__text">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
 								</p>
 							</div>
 						</div>
+					</section>
+					{/* Tours section */}
+					<section className="tours">
+						<h2 className="heading-secondary">Most popular tours</h2>
 					</section>
 				</section>
 			</StyledMain>
