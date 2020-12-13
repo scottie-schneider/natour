@@ -36,6 +36,41 @@ const StyledMain = styled.main`
 	/* Animations */
 
 	/* Base */
+	.images {
+		.composition {
+			&:hover .composition__photo:not(:hover) {
+				transform: scale(0.9);
+			}
+			position: relative;
+			&__photo {
+				width: 55%;
+				box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+				border-radius: 2px;
+				position: absolute;
+				z-index: 10;
+				transition: all 0.2s;
+				&--p1 {
+					left: 0;
+					top: -2rem;
+				}
+				&--p2 {
+					right: 0;
+					top: 2rem;
+				}
+				&--p3 {
+					left: 20%;
+					top: 10rem;
+				}
+				&:hover {
+					outline: 1.5rem solid ${props => props.theme.primary};
+					transform: scale(1.05);
+					box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+					z-index: 20;
+					outline-offset: 2rem;
+				}
+			}
+		}
+	}
 	.tour-marketing {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -195,7 +230,25 @@ export default function Home() {
 								Learn more {String.fromCharCode(8594)}
 							</a>
 						</div>
-						<div class="images">Image composition</div>
+						<div class="images">
+							<div class="composition">
+								<img
+									src="img/nat-1-large.jpg"
+									alt="Photo 1"
+									class="composition__photo composition__photo--p1"
+								/>
+								<img
+									src="img/nat-2-large.jpg"
+									alt="Photo 2"
+									class="composition__photo composition__photo--p2"
+								/>
+								<img
+									src="img/nat-3-large.jpg"
+									alt="Photo 3"
+									class="composition__photo composition__photo--p3"
+								/>
+							</div>
+						</div>
 					</div>
 				</section>
 			</StyledMain>
